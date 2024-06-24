@@ -8,7 +8,7 @@ To build the project you must run `go build .`
 
 
 ## How to run
-After build the project *server.exe* file will be generated and you can excute this file.
+After build the project *server.exe* file will be generated and you can excute this file on terminal.
 
 
 ## Preview
