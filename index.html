@@ -12,8 +12,15 @@
 <body class="container-fluid">
 
   <div class="row mt-4 g-4">
+
+
     <div class="col-8">
       <h1 class="mb-4">Film list</h1>
+      {{ block "message" .}}
+        <div style="display: none;" id="result" class="alert alert-warning" role="alert">
+          <p>This movie and director were added already.</p>
+        </div>
+      {{ end }}
       <table class="table table-responsible  table-bordered table-striped">
         <thead>
           <tr>
@@ -54,6 +61,19 @@
     document.getElementById('film-title').focus();
     
     document.addEventListener('htmx:afterRequest', function (event) {
+
+      const response = event.detail.xhr.responseText+'';
+      console.log(response)
+      if(response.includes("added")){
+
+        const item = document.getElementById("result")
+        item.innerHTML = response
+        item.style.display = 'block'
+      }
+
+      setTimeout(() =>{
+        document.getElementById("result").style.display = 'none'
+      }, 1500);
       var form = document.getElementById('form');
       form.reset();
       document.getElementById('film-title').focus();
