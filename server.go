@@ -14,7 +14,7 @@ var 	(
 		"Films":{
 			{Title: "The Godfather", Director: "Francis Ford Coppola"},
 			{Title: "Pulp Fiction", Director: "Quentin Tarantino"},
-			{Title: "Steven Spielberg", Director: "Jurassic Park"},
+			{Title: "Jurassic Park", Director: "Steven Spielberg"},
 			{Title: " Back to the future", Director: " Robert Zemeckis"},
 		},
 	}
